@@ -1,0 +1,78 @@
+<link rel="stylesheet" href="__STATIC__/admin/css/welcome.css?v={:time()}" media="all">
+<div class="layuimini-container">
+    <div class="layuimini-main">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md12">
+                <div class="layui-row layui-col-space15">
+                    <div class="layui-col-md6">
+                        <div class="layui-card">
+                            <div class="layui-card-header"><i class="fa fa-credit-card icon icon-blue"></i>快捷入口</div>
+                            <div class="layui-card-body">
+                                <div class="welcome-module">
+                                    <div class="layui-row layui-col-space10 layuimini-qiuck">
+
+                                        {foreach $quicks as $vo}
+                                        <div class="layui-col-xs3 layuimini-qiuck-module">
+                                            <a layuimini-content-href="{:url($vo['href'])}" data-title="{$vo['title']}">
+                                                <i class="{$vo['icon']|raw}"></i>
+                                                <cite>{$vo['title']}</cite>
+                                            </a>
+                                        </div>
+                                        {/foreach}
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="layui-col-md6">
+
+                        <div class="layui-card">
+                            <div class="layui-card-header"><i class="fa fa-fire icon"></i>站点信息</div>
+                            <div class="layui-card-body layui-text">
+                                <table class="layui-table">
+                                    <colgroup>
+                                        <col width="100">
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                    <tr>
+                                        <td>站点名称</td>
+                                        <td>{:sysconfig('site','site_name')}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>版本信息</td>
+                                        <td>{:sysconfig('site','site_version')}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>备案信息</td>
+                                        <td>{:sysconfig('site','site_beian')}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>版权信息</td>
+                                        <td>{:sysconfig('site','site_copyright')}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>前台首页</td>
+                                        <td><a href="/" target="_blank">点击前往</a></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--<div class="layui-col-md12">-->
+                        <!--<div class="layui-card">-->
+                            <!--<div class="layui-card-header"><i class="fa fa-line-chart icon"></i>报表统计</div>-->
+                            <!--<div class="layui-card-body">-->
+                                <!--<div id="echarts-records" style="width: 100%;min-height:500px"></div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

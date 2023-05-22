@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>该页面不存在-404</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../css/h-ui.reset.css" />
+    <style>
+        .system {
+            width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 140px;
+        }
+
+        .system img {
+            text-align: center;
+            width: 500px;
+        }
+
+        .title {}
+
+        .title h2 {
+            color: #fff;
+            font-size: 36px;
+            letter-spacing: 4px;
+            text-align: center;
+            line-height: 120px;
+        }
+
+        .title h4 {
+            color: #fff;
+            font-size: 18px;
+            /* font-weight: bold; */
+            line-height: 38px;
+            text-align: center;
+        }
+        .btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .btn a{
+            display: inline-block;
+            margin: 0 20px;
+            color:#fff;
+            font-size: 16px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="system">
+        <img src="../imgs/404.png" />
+        <div class="title">
+            <h2>页面走丢了...</h2>
+           
+        </div>
+        <div class="btn">
+            <a id="prevPage">返回上一页</a>
+            <a href="index.html">首页</a>
+        </div>
+    </div>
+
+</body>
+<script>
+window.onload = function() {
+    var timer = null;
+    var nextBtn = document.querySelector("#prevPage")
+    nextBtn.addEventListener("click",function(){
+        window.history.go(-1)
+    })
+    clearTimeout(timer)
+    setTimeout(function(){
+        location.href = 'index.html'
+    },5000)
+}
+</script>
+</html>
