@@ -45,4 +45,26 @@ class TimeModel extends Model
     use SoftDelete;
     protected $deleteTime = false;
 
+    public function __construct(array $data = [])
+    {
+        parent::__construct($data);
+
+        //判断是前台请求还是后台请求
+        $url = request()->url();
+        if (strpos($url, config('app.admin_alias_name'))) {
+            //使用后台站点缓存
+            $site = session('site_admin');
+        } else {
+            //使用前台站点
+            $site = request()->header('site', 'cn');
+        }
+
+        //根据站点调用数据库
+        if (!empty($site)) {
+            $this->site = $site == 'cn' ? '' : '_' . $site;
+        } else {
+            $this->site = '';
+        }
+    }
+
 }

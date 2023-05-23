@@ -29,9 +29,6 @@ class Index extends AdminController
             case 'en':
                 $site_name = "英文站";
                 break;
-            case 'jp':
-                $site_name = "日语站";
-                break;
             default:
                 $site_name = "中文站";
         }
