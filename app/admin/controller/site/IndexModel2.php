@@ -8,9 +8,9 @@ use EasyAdmin\annotation\NodeAnotation;
 use think\App;
 
 /**
- * @ControllerAnnotation(title="site_index_model1")
+ * @ControllerAnnotation(title="site_index_model2")
  */
-class IndexModel3 extends AdminController
+class IndexModel2 extends AdminController
 {
 
     use \app\admin\traits\Curd;
@@ -19,18 +19,8 @@ class IndexModel3 extends AdminController
     {
         parent::__construct($app);
 
-        $this->model = new \app\admin\model\SiteIndexModel();
+        $this->model = new \app\admin\model\SiteIndexModel2();
         
-    }
-
-    /**
-     * @NodeAnotation(title="列表")
-     */
-    public function index()
-    {
-        $data = $this->model->where('id',2)->find()->toArray();
-        $this->assign('data',$data);
-        return $this->fetch();
     }
 
     /**
@@ -43,12 +33,10 @@ class IndexModel3 extends AdminController
         try {
             $update = [
                 'title'=>$post['title'] ?? "",
-                'content'=>$post['content'] ?? "",
                 'button'=>$post['button'] ?? "",
-                'img'=>$post['img'] ?? "",
                 'link'=>$post['link'] ?? "",
             ];
-            $this->model->where('id',2)->update($update);
+            $this->model->where('id',1)->update($update);
         } catch (\Exception $e) {
             $this->error('保存失败');
         }

@@ -4,23 +4,18 @@ namespace app\admin\model;
 
 use app\common\model\TimeModel;
 
-class SiteIndexBanner extends TimeModel
+class SiteIndexModel2 extends TimeModel
 {
 
-    protected $name = "site_index_banner";
+    protected $name = "site_index_model2";
 
     protected $deleteTime = false;
+
 
     public function __construct(array $data = [])
     {
         parent::__construct($data);
         $this->name = $this->name . $this->site;
     }
-    
-    public function getStatusList()
-    {
-        return ['0'=>'禁用','1'=>'启用',];
-    }
-
 
 }

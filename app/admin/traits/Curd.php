@@ -36,6 +36,12 @@ trait Curd
                 ->page($page, $limit)
                 ->order($this->sort)
                 ->select();
+            //有的表可能会将标题和数据集存储在一个表，所以通过group进行区分
+            foreach ($list as $k=>$item){
+                if (isset($item["group"]) && $item["group"]=="title"){
+                    unset($list[$k]);
+                }
+            }
             $data = [
                 'code'  => 0,
                 'msg'   => '',
@@ -43,6 +49,10 @@ trait Curd
                 'data'  => $list,
             ];
             return json($data);
+        }
+        $title = $this->model->where("id",1)->find();
+        if(isset($title["group"]) && $title["group"]=="title"){
+            $this->assign("title",$title);
         }
         return $this->fetch();
     }
