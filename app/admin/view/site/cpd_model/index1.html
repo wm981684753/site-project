@@ -1,0 +1,101 @@
+<div class="layuimini-container">
+    <div class="layuimini-main" id="app">
+
+        <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+            <ul class="layui-tab-title">
+                <li class="layui-this">Our Team</li>
+            </ul>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                    <form id="app-form" class="layui-form layuimini-form">
+
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">标题</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="title" class="layui-input" lay-verify="required" value="{$data.title|raw|default=''}">
+                                <tip>标题不能为空</tip>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">文案</label>
+                            <div class="layui-input-block">
+                                <textarea type="text" rows="5" name="content" class="layui-textarea">{$data.content|raw|default=''}</textarea>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">图1标题</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="img1_title" class="layui-input" value="{$data.img1_title|raw|default=''}">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label required">图1</label>
+                            <div class="layui-input-block layuimini-upload">
+                                <input name="img1" class="layui-input layui-col-xs6"   placeholder="请上传图片" value="{$data.img1|raw|default=''}">
+                                <div class="layuimini-upload-btn">
+                                    <span><a class="layui-btn" data-upload="img1" data-upload-number="one" data-upload-exts="png|jpg|ico|jpeg" data-upload-icon="image"><i class="fa fa-upload"></i> 上传</a></span>
+                                    <span><a class="layui-btn layui-btn-normal" id="select_img1" data-upload-select="img1" data-upload-number="one" data-upload-mimetype="image/*"><i class="fa fa-list"></i> 选择</a></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">图2标题</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="img2_title" class="layui-input" value="{$data.img2_title|raw|default=''}">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label required">图2</label>
+                            <div class="layui-input-block layuimini-upload">
+                                <input name="img2" class="layui-input layui-col-xs6"   placeholder="请上传图片" value="{$data.img2|raw|default=''}">
+                                <div class="layuimini-upload-btn">
+                                    <span><a class="layui-btn" data-upload="img2" data-upload-number="one" data-upload-exts="png|jpg|ico|jpeg" data-upload-icon="image"><i class="fa fa-upload"></i> 上传</a></span>
+                                    <span><a class="layui-btn layui-btn-normal" id="select_img2" data-upload-select="img2" data-upload-number="one" data-upload-mimetype="image/*"><i class="fa fa-list"></i> 选择</a></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">图3标题</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="img3_title" class="layui-input" value="{$data.img1_title|raw|default=''}">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label required">图3</label>
+                            <div class="layui-input-block layuimini-upload">
+                                <input name="img3" class="layui-input layui-col-xs6"   placeholder="请上传图片" value="{$data.img3|raw|default=''}">
+                                <div class="layuimini-upload-btn">
+                                    <span><a class="layui-btn" data-upload="img3" data-upload-number="one" data-upload-exts="png|jpg|ico|jpeg" data-upload-icon="image"><i class="fa fa-upload"></i> 上传</a></span>
+                                    <span><a class="layui-btn layui-btn-normal" id="select_img3" data-upload-select="img3" data-upload-number="one" data-upload-mimetype="image/*"><i class="fa fa-list"></i> 选择</a></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">图4标题</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="img1_title" class="layui-input" value="{$data.img4_title|raw|default=''}">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label required">图4</label>
+                            <div class="layui-input-block layuimini-upload">
+                                <input name="img4" class="layui-input layui-col-xs6"   placeholder="请上传图片" value="{$data.img4|raw|default=''}">
+                                <div class="layuimini-upload-btn">
+                                    <span><a class="layui-btn" data-upload="img4" data-upload-number="one" data-upload-exts="png|jpg|ico|jpeg" data-upload-icon="image"><i class="fa fa-upload"></i> 上传</a></span>
+                                    <span><a class="layui-btn layui-btn-normal" id="select_img4" data-upload-select="img4" data-upload-number="one" data-upload-mimetype="image/*"><i class="fa fa-list"></i> 选择</a></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hr-line"></div>
+                        <div class="layui-form-item text-center">
+                            <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit="site.cpdModel/save?id=1" data-refresh="false">确认</button>
+                            <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
