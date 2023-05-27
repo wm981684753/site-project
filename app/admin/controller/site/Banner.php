@@ -46,7 +46,6 @@ class Banner extends AdminController
                 ->withJoin('sitePageCate', 'LEFT')
                 ->where($where)
                 ->page($page, $limit)
-                ->order("sitePageCate.id","asc")
                 ->order($this->sort)
                 ->select();
             $data = [

@@ -18,8 +18,8 @@ define(["jquery", "easy-admin"], function ($, ea) {
                 init: init,
                 cols: [[
                     {type: 'checkbox'},
-                    {field: 'sitePageCate.name', title: '所属页面'},
                     // {field: 'id', title: 'ID'},
+                    {field: 'sitePageCate.name', title: '所属页面'},
                     {field: 'title', title: '标题'},
                     {field: 'content', title: '文案'},
                     {field: 'path', title: '图片路径', templet: ea.table.image},
@@ -27,8 +27,6 @@ define(["jquery", "easy-admin"], function ($, ea) {
                     {field: 'link', title: '跳转链接'},
                     {field: 'status', search: 'select', selectList: ["禁用","启用"], title: '状态', templet: ea.table.switch},
                     {field: 'sort', title: '排序', edit: 'text'},
-                    // {field: 'cate_id', title: '所属页面'},
-                    // {field: 'sitePageCate.id', title: 'ID'},
                     {width: 250, title: '操作', templet: ea.table.tool},
                 ]],
             });
