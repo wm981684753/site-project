@@ -10,7 +10,10 @@ class Index extends BaseController
 {
     public function data(){
         //banner
-        $data["banner"] = (new SiteBanner())->withoutField("id")->where("cate_id",1)->select();
+        $data["banner"] = (new SiteBanner())->withoutField("id")->where("cate_id",1)
+            ->where("status",1)
+            ->order("sort")
+            ->select();
         //获取首页数据
         $data["model1"] = (new SiteIndexModel())->field(["title","content","img","button","link"])->where("id",1)->find();
         $data["model2"] = [

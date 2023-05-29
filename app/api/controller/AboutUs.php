@@ -10,7 +10,7 @@ class AboutUs extends BaseController
 {
     public function data(){
         //banner
-        $data["banner"] = (new SiteBanner())->withoutField("id")->where("cate_id",2)->select();
+        $data["banner"] = (new SiteBanner())->withoutField("id")->where("cate_id",2)->where("status",1)->find();
 
         $data["model1"] = [
             "title"=>(new SiteAboutUsModel2())->field(["title","content"])->where("group","title")->find(),

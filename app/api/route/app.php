@@ -26,6 +26,7 @@ use think\facade\Route;
 //jwt-demo-----end
 
 Route::get('/index', 'Index/data');
+Route::get('/products', 'Products/data');
 Route::get('/aboutUs', 'AboutUs/data');
 Route::get('/edr', 'Edr/data');
 Route::get('/cpd', 'Cpd/data');

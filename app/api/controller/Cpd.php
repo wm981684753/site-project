@@ -10,7 +10,7 @@ class Cpd extends BaseController
 {
     public function data(){
         //banner
-        $data["banner"] = (new SiteBanner())->withoutField("id")->where("cate_id",5)->select();
+        $data["banner"] = (new SiteBanner())->withoutField("id")->where("cate_id",5)->where("status",1)->find();
 
         $data["model1"] = (new SiteCpdModel())->withoutField("id")->where("id",1)->find();
 

@@ -10,7 +10,7 @@ class Edr extends BaseController
 {
     public function data(){
         //banner
-        $data["banner"] = (new SiteBanner())->withoutField("id")->where("cate_id",4)->select();
+        $data["banner"] = (new SiteBanner())->withoutField("id")->where("cate_id",4)->where("status",1)->find();
 
         $data["model1"] = [
             "title"=>(new SiteEdrModel2())->field(["title","content"])->where("group","title")->find(),

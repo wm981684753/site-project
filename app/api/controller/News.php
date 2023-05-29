@@ -9,12 +9,13 @@ class News extends BaseController
 {
     public function data(){
         //banner
-        $data["banner"] = (new SiteBanner())->withoutField("id")->where("cate_id",2)->select();
+        $data["banner"] = (new SiteBanner())->withoutField("id")->where("cate_id",2)->where("status",1)->find();
 
         $newsList = (new SiteNews())->alias("news")
             ->field(["news.id","news.title","news.description","news.img","news.up_date","nc.name as cate_name","nc.cid"])
             ->leftJoin("ea_site_news_cate nc","news.cate_id = nc.cid")
             ->where("nc.language_code",$this->site)
+            ->order("news.up_date","desc")
             ->select();
 
         foreach ($newsList??[] as $item){
