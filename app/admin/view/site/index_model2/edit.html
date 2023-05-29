@@ -7,6 +7,16 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label required">小图标</label>
+            <div class="layui-input-block layuimini-upload">
+                <input name="icon" class="layui-input layui-col-xs6"   placeholder="请上传小图标" value="{$row.icon|default=''}">
+                <div class="layuimini-upload-btn">
+                    <span><a class="layui-btn" data-upload="icon" data-upload-number="one" data-upload-exts="png|jpg|ico|jpeg" data-upload-icon="image"><i class="fa fa-upload"></i> 上传</a></span>
+                    <span><a class="layui-btn layui-btn-normal" id="select_icon" data-upload-select="icon" data-upload-number="one" data-upload-mimetype="image/*"><i class="fa fa-list"></i> 选择</a></span>
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
             <label class="layui-form-label required">图片</label>
             <div class="layui-input-block layuimini-upload">
                 <input name="img" class="layui-input layui-col-xs6"   placeholder="请上传背景图片" value="{$row.img|default=''}">
