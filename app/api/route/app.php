@@ -15,12 +15,18 @@ use think\facade\Route;
 //更多操作-文档地址 http://packagist.p2hp.com/packages/thans/tp-jwt-auth#v1.2.0
 
 //登录
-Route::post('login$', 'Login/login');
-
-Route::post('login/out', 'Login/out');
-
-Route::group('user',function (){
-    Route::get('index', 'User/index');
-})->middleware(thans\jwt\middleware\JWTAuthAndRefresh::class);
+//Route::post('login$', 'Login/login');
+//
+//Route::post('login/out', 'Login/out');
+//
+//Route::group('user',function (){
+//    Route::get('index', 'User/index');
+//})->middleware(thans\jwt\middleware\JWTAuthAndRefresh::class);
 
 //jwt-demo-----end
+
+Route::get('/index', 'Index/data');
+Route::get('/aboutUs', 'AboutUs/data');
+Route::get('/edr', 'Edr/data');
+Route::get('/cpd', 'Cpd/data');
+Route::get('/news', 'News/data');
