@@ -32,7 +32,7 @@ class AboutUsModel extends AdminController
         $id = $request->param("id","");
         $data = $this->model->where('id',$id)->find()->toArray();
         $this->assign('data',$data);
-        return $this->fetch("site/index_model/index{$id}");
+        return $this->fetch("site/about_us_model/index{$id}");
     }
 
     /**
@@ -49,6 +49,7 @@ class AboutUsModel extends AdminController
         try {
             $update = [
                 'title'=>$post['title'] ?? "",
+                'title_s'=>$post['title_s'] ?? "",
                 'content'=>$post['content'] ?? "",
                 'button'=>$post['button'] ?? "",
                 'img'=>$post['img'] ?? "",
