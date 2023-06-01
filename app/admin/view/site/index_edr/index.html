@@ -1,0 +1,82 @@
+<div class="layuimini-container">
+    <div class="layuimini-main">
+        <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+            <ul class="layui-tab-title">
+                <li class="layui-this">EDR</li>
+            </ul>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                    <form id="app-form" class="layui-form layuimini-form">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">标题</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="title" class="layui-input" lay-verify="required" value="{$data.title|raw|default=''}">
+                                <tip>标题不能为空</tip>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">文案</label>
+                            <div class="layui-input-block">
+                                <textarea type="text" rows="5" name="content" class="layui-textarea">{$data.content|raw|default=''}</textarea>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">图1标题</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="edr1_title" class="layui-input" value="{$data.edr1_title|raw|default=''}">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label required">图1</label>
+                            <div class="layui-input-block layuimini-upload">
+                                <input name="edr1_img" class="layui-input layui-col-xs6"   placeholder="请上传图片" value="{$data.edr1_img|raw|default=''}">
+                                <div class="layuimini-upload-btn">
+                                    <span><a class="layui-btn" data-upload="edr1_img" data-upload-number="one" data-upload-exts="png|jpg|ico|jpeg" data-upload-icon="image"><i class="fa fa-upload"></i> 上传</a></span>
+                                    <span><a class="layui-btn layui-btn-normal" id="select_edr1_img" data-upload-select="edr1_img" data-upload-number="one" data-upload-mimetype="image/*"><i class="fa fa-list"></i> 选择</a></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">图2标题</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="edr2_title" class="layui-input" value="{$data.edr2_title|raw|default=''}">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label required">图2</label>
+                            <div class="layui-input-block layuimini-upload">
+                                <input name="edr2_img" class="layui-input layui-col-xs6"   placeholder="请上传图片" value="{$data.edr2_img|raw|default=''}">
+                                <div class="layuimini-upload-btn">
+                                    <span><a class="layui-btn" data-upload="edr2_img" data-upload-number="one" data-upload-exts="png|jpg|ico|jpeg" data-upload-icon="image"><i class="fa fa-upload"></i> 上传</a></span>
+                                    <span><a class="layui-btn layui-btn-normal" id="select_edr2_img" data-upload-select="edr2_img" data-upload-number="one" data-upload-mimetype="image/*"><i class="fa fa-list"></i> 选择</a></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">图3标题</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="edr3_title" class="layui-input" value="{$data.edr3_title|raw|default=''}">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label required">图3</label>
+                            <div class="layui-input-block layuimini-upload">
+                                <input name="edr3_img" class="layui-input layui-col-xs6"   placeholder="请上传图片" value="{$data.edr3_img|raw|default=''}">
+                                <div class="layuimini-upload-btn">
+                                    <span><a class="layui-btn" data-upload="edr3_img" data-upload-number="one" data-upload-exts="png|jpg|ico|jpeg" data-upload-icon="image"><i class="fa fa-upload"></i> 上传</a></span>
+                                    <span><a class="layui-btn layui-btn-normal" id="select_edr3_img" data-upload-select="edr3_img" data-upload-number="one" data-upload-mimetype="image/*"><i class="fa fa-list"></i> 选择</a></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hr-line"></div>
+                        <div class="layui-form-item text-center">
+                            <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit="site.indexEdr/save" data-refresh="false">确认</button>
+                            <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

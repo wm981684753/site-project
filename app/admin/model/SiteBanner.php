@@ -11,6 +11,12 @@ class SiteBanner extends TimeModel
 
     protected $deleteTime = false;
 
+    public function __construct(array $data = [])
+    {
+        parent::__construct($data);
+        $this->name = $this->name . $this->site;
+    }
+
     
     public function sitePageCate()
     {

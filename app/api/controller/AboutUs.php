@@ -18,7 +18,7 @@ class AboutUs extends BaseController
         ];
 
         $data["model2"] = (new SiteAboutUsModel())->withoutField(["id"])->where("id",1)->find();
-        $data["model3"] = (new SiteAboutUsModel())->field(["title","content"])->where("id",2)->find();
+        $data["model3"] = (new SiteAboutUsModel())->field(["title","title_s","content"])->where("id",2)->find();
         return $this->jsonResponse->success($data);
     }
 }

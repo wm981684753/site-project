@@ -15,15 +15,16 @@ class News extends BaseController
             ->field(["news.id","news.title","news.description","news.img","news.up_date","nc.name as cate_name","nc.cid"])
             ->leftJoin("ea_site_news_cate nc","news.cate_id = nc.cid")
             ->where("nc.language_code",$this->site)
+            ->order("news.status",1)
             ->order("news.up_date","desc")
             ->select();
 
         foreach ($newsList??[] as $item){
             if($item["cid"]==1) {
-                $data["news"]["company"]["list"] = $item;
+                $data["news"]["company"]["list"][] = $item;
                 $data["news"]["company"]["cate_title"] = $item["cate_name"];
             }else{
-                $data["news"]["industry"]["list"] = $item;
+                $data["news"]["industry"]["list"][] = $item;
                 $data["news"]["industry"]["cate_title"] = $item["cate_name"];
             }
         }

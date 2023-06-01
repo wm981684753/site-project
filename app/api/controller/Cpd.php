@@ -14,7 +14,10 @@ class Cpd extends BaseController
 
         $data["model1"] = (new SiteCpdModel())->withoutField("id")->where("id",1)->find();
 
-        $data["model2"] = (new SiteJob())->withoutField("id")->select();
+        $data["model2"] = [
+            "title"=>(new SiteJob())->where("group","title")->value("title"),
+            "data"=>(new SiteJob())->withoutField(["id","title"])->where("group","list")->select(),
+        ];
 
         return $this->jsonResponse->success($data);
     }
