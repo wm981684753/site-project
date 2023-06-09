@@ -30,4 +30,6 @@ Route::get('/products', 'Products/data');
 Route::get('/aboutUs', 'AboutUs/data');
 Route::get('/edr', 'Edr/data');
 Route::get('/cpd', 'Cpd/data');
-Route::get('/news', 'News/data');
+Route::get('/news$', 'News/data');
+Route::get('/news/list', 'News/list');
+Route::get('/news/details', 'News/details');
