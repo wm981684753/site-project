@@ -9,7 +9,7 @@ class News extends BaseController
 {
     public function data(){
         //banner
-        $data["banner"] = (new SiteBanner())->withoutField("id")->where("cate_id",2)->where("status",1)->find();
+        $data["banner"] = (new SiteBanner())->withoutField("id")->where("cate_id",6)->where("status",1)->find();
 
         $newsList = (new SiteNews())->alias("news")
             ->field(["news.id","news.title","news.description","news.img","news.up_date","nc.name as cate_name","nc.cid"])
