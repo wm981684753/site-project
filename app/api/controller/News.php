@@ -81,10 +81,27 @@ class News extends BaseController
         $next = $siteNews->where("id",">",$id)->field(["id","title"])->order("id","asc")->find();
         $prev = $siteNews->where("id","<",$id)->field(["id","title"])->order("id","desc")->find();
 
+        //获取推荐列表,取最新的5/10
+        $newsList = $siteNews->alias("news")
+            ->field(["id","title"])
+            ->where("cate_id",$details["cate_id"])
+            ->order("status",1)
+            ->order("up_date","desc")
+            ->limit(10)
+            ->select()->toArray();
+        $keys=array_rand($newsList,count($newsList)>5 ? 5 : count($newsList));
+        $recommend = [];
+        foreach ($newsList as $k=>$v){
+            if(in_array($k,$keys)){
+                $recommend[] = $v;
+            }
+        }
+
         $data = [
             "details"=>$details,
             "prev"=>$prev,
             "next"=>$next,
+            "recommend"=>$recommend,
         ];
         return $this->jsonResponse->success($data);
     }
