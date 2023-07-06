@@ -6,7 +6,7 @@
                 <select name="cate_id" lay-verify="required">
                     <option value=''></option>
                     {foreach $getSitePageCateList as $k=>$v}
-                    <option value='{$k}' {if $row.cate_id=$k}selected=""{/if}>{$v}</option>
+                    <option value='{$k}' {if $row.cate_id=$k}selected{/if}>{$v}</option>
                     {/foreach}
                 </select>
             </div>
