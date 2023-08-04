@@ -46,6 +46,12 @@
                 {/foreach}
             </div>
         </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">发布时间</label>
+            <div class="layui-input-block">
+                <input type="text" name="up_date" lay-verify="required" data-date="" data-date-type="datetime" class="layui-input"  placeholder="默认当前时间" value="{$row.up_date}">
+            </div>
+        </div>
 
         <div class="hr-line"></div>
         <div class="layui-form-item text-center">
